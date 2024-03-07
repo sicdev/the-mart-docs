@@ -2,6 +2,22 @@
 
 Aqui você encontrará uma visão geral da API de vendas e como integra-la à sua aplicação.
 
+## Índice
+
+- [Autenticação](#autenticação)
+  - [Como Gerar o Token de Acesso](#como-gerar-o-token-de-acesso)
+- [Busca de Vendas](#busca-de-vendas-get-integrationsales)
+  - [Query Params](#query-params-vendas)
+  - [Exemplo de Resposta](#exemplo-resposta-vendas)
+  - [Tipos da Resposta](#tipos-da-resposta-vendas)
+    - [Sale](#sale)
+    - [Customer](#customer)
+    - [Product](#product)
+- [Busca de Produtos](#busca-de-produtos-get-integrationproducts)
+  - [Query Params](#query-params-produtos)
+  - [Exemplo de Resposta](#exemplo-de-resposta-produtos)
+  - [Tipos da Resposta](#tipos-da-resposta-produtos)
+
 ## Autenticação
 
 A autenticação de todas as rotas é feita pelo header `Authorization`, utilizando Bearer Token.
@@ -27,7 +43,7 @@ curl --request GET \
   --header 'Authorization: Bearer {Bearer Token}' \
 ```
 
-### Parâmetros (Vendas)
+### Query Params (Vendas)
 
 | Campo       | Valor Exemplo                  | Descrição                                                                               |
 | ----------- | ------------------------------ | --------------------------------------------------------------------------------------- |
@@ -84,7 +100,7 @@ curl --request GET \
 }
 ```
 
-### Response (Vendas)
+### Tipos da Resposta (Vendas)
 
 | Propriedades | Tipo      | Descrição                             |
 | ------------ | --------- | ------------------------------------- |
@@ -145,7 +161,7 @@ curl --request GET \
   --header 'Authorization: Bearer {Bearer Token}'
 ```
 
-### Parâmetros (Produtos)
+### Query Params (Produtos)
 
 | Campo      | Valor Exemplo           | Descrição                                                                               |
 | ---------- | ----------------------- | --------------------------------------------------------------------------------------- |
@@ -172,7 +188,7 @@ curl --request GET \
 }
 ```
 
-### Response (Produtos)
+### Tipos da Resposta (Produtos)
 
 | Propriedades  | Tipo     | Descrição                             |
 | ------------- | -------- | ------------------------------------- |

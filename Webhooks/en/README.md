@@ -2,6 +2,24 @@
 
 Here you will find an overview of webhooks and how to integrate them into your application.
 
+## Index
+
+- [Available Trigger Events](#available-trigger-events)
+- [Authentication](#authentication)
+- [Payload](#payload)
+- [Types](#data)
+  - [WebhookBody](#webhookbody)
+  - [Product](#product)
+  - [Plan](#plan)
+  - [Order](#order)
+  - [PaymentMethods](#payment-methods)
+  - [Status](#status)
+  - [PixPayment](#pixpayment)
+  - [BoletoPayment](#boletopayment)
+  - [Customer](#customer)
+  - [Address](#address)
+  - [Phone](#phone)
+
 ## Available Trigger Events
 
 | Event Name           | Trigger              |
@@ -140,7 +158,7 @@ In the **'order-made'** and **'order-paid'** events for orders placed with _Bole
 | `createdAt`     | ISO 8601 String               | Order creation date               |
 | `updatedAt`     | ISO 8601 String               | Last sale update date             |
 
-### Payment Metods
+### Payment Methods
 
 | Valor         | Description |
 | ------------- | ----------- |

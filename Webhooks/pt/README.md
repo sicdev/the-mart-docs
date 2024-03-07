@@ -2,6 +2,24 @@
 
 Aqui você encontrará uma visão geral dos webhooks e como integra-los à sua aplicação.
 
+## Índice
+
+- [Eventos Disponíveis](#eventos-disponíveis)
+- [Autenticação](#autenticação)
+- [Payload](#payload)
+- [Tipos](#tipos)
+  - [WebhookBody](#webhookbody)
+  - [Product](#product)
+  - [Plan](#plan)
+  - [Order](#order)
+  - [PaymentMethods](#payment-methods)
+  - [Status](#status)
+  - [PixPayment](#pixpayment)
+  - [BoletoPayment](#boletopayment)
+  - [Customer](#customer)
+  - [Address](#address)
+  - [Phone](#phone)
+
 ## Eventos disponíveis
 
 | Nome do Evento       | Momento de Ativação  |
@@ -81,7 +99,7 @@ O método de webhooks dispensa qualquer autenticação extra. Sendo gerada indiv
 }
 ```
 
-### Payload
+### Tipos
 
 | Propriedade   | Tipo          | Descrição                            |
 | ------------- | ------------- | ------------------------------------ |
@@ -140,7 +158,7 @@ Nos eventos **'order-made'** e **'order-paid'** em pedidos realizados com Boleto
 | `createdAt`     | ISO 8601 String               | Data de criação da Venda                              |
 | `updatedAt`     | ISO 8601 String               | Ultima atualização da Venda                           |
 
-### Payment Metods
+### Payment Methods
 
 | Valor         | Descrição         |
 | ------------- | ----------------- |

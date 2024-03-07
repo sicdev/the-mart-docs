@@ -2,6 +2,22 @@
 
 Here you will find an overview of the sales API and how to integrate it into your application.
 
+## Index
+
+- [Authentication](#authentication)
+  - [How to Generate an Access Token](#how-to-generate-an-access-token)
+- [Get Sales](#get-sales-get-integrationsales)
+  - [Query Params](#query-params-sales)
+  - [Response Example](#response-example-sales)
+  - [Response Types](#response-types-sales)
+    - [Sale](#sale)
+    - [Customer](#customer)
+    - [Product](#product)
+- [Get Products](#get-products-get-integrationproducts)
+  - [Query Params](#query-params-products)
+  - [Response Example](#response-example-products)
+  - [Response Types](#response-types-products)
+
 ## Authentication
 
 Authentication for all routes is done using the `Authorization` header, utilizing a Bearer Token.
@@ -82,7 +98,7 @@ curl --request GET \
 }
 ```
 
-### Response (Sales)
+### Response Types (Sales)
 
 | Properties   | Type      | Description                  |
 | ------------ | --------- | ---------------------------- |
@@ -170,7 +186,7 @@ curl --request GET \
 }
 ```
 
-### Response (Products)
+### Response Types (Products)
 
 | Properties    | Type     | Description                  |
 | ------------- | -------- | ---------------------------- |
