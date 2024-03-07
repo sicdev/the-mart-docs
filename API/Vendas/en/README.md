@@ -17,6 +17,9 @@ Here you will find an overview of the sales API and how to integrate it into you
   - [Query Params](#query-params-products)
   - [Response Example](#response-example-products)
   - [Response Types](#response-types-products)
+- [Alterar Código de Rastreio](#alterar-código-de-rastreio-patch-integrationsale-shipping)
+  - [Payload](#payload-rastreio)
+  - [Resposta](#resposta-rastreio)
 
 ## Authentication
 
@@ -194,3 +197,37 @@ curl --request GET \
 | `results`     | Object[] | Records found                |
 | `ProductID`   | String   | Product unique identifier    |
 | `productName` | String   | Product name                 |
+
+## Update Sale Tracking Info (`PATCH /integration/sale-shipping`)
+
+Use this route to update or insert the tracking code and logistics provider for a sale.
+
+```bash
+curl -X 'PATCH' \
+  'http://the-mart-api.herokuapp.com/integration/sale-shipping' \
+  -H 'accept: */*' \
+  -H 'Authorization: Bearer {Bearer Token}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "data": [
+    {
+      "saleId": "tmor_...",
+      "shippingService": "correios",
+      "shippingCode": "QR...BR"
+    }
+  ]
+}'
+```
+
+## Payload (Tracking)
+
+| Propriedades      | Tipo     | Descrição                                 |
+| ----------------- | -------- | ----------------------------------------- |
+| `data`            | Object[] | Sales to be updated and its data          |
+| `saleId`          | String   | Sale unique identificator (`tmor_...`)    |
+| `shippingService` | String   | Logistics service (correios, jadlog, etc) |
+| `shippingCode`    | String   | Tracking code                             |
+
+## Response (Tracking)
+
+The application will return status code `200` and a confirmation string if all objects in the provided array have been updated.

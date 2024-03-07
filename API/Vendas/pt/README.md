@@ -17,6 +17,9 @@ Aqui você encontrará uma visão geral da API de vendas e como integra-la à su
   - [Query Params](#query-params-produtos)
   - [Exemplo de Resposta](#exemplo-de-resposta-produtos)
   - [Tipos da Resposta](#tipos-da-resposta-produtos)
+- [Alterar Código de Rastreio](#alterar-código-de-rastreio-patch-integrationsale-shipping)
+  - [Payload](#payload-rastreio)
+  - [Resposta](#resposta-rastreio)
 
 ## Autenticação
 
@@ -196,3 +199,37 @@ curl --request GET \
 | `results`     | Object[] | Registros encontrados                 |
 | `ProductID`   | String   | Identificador único do Produto        |
 | `productName` | String   | Nome do Produto                       |
+
+## Alterar Código de Rastreio (`PATCH /integration/sale-shipping`)
+
+Utilize esta rota para atualizar ou inserir o código de rastreio e provedor logístico de uma venda.
+
+```bash
+curl -X 'PATCH' \
+  'http://the-mart-api.herokuapp.com/integration/sale-shipping' \
+  -H 'accept: */*' \
+  -H 'Authorization: Bearer {Bearer Token}' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "data": [
+    {
+      "saleId": "tmor_...",
+      "shippingService": "correios",
+      "shippingCode": "QR...BR"
+    }
+  ]
+}'
+```
+
+## Payload (Rastreio)
+
+| Propriedades      | Tipo     | Descrição                                    |
+| ----------------- | -------- | -------------------------------------------- |
+| `data`            | Object[] | Vendas a serem atualizadas e seus dados      |
+| `saleId`          | String   | Identificador único da venda (`tmor_...`)    |
+| `shippingService` | String   | Serviço de Logistica (correios, jadlog, etc) |
+| `shippingCode`    | String   | Código de Rastreio                           |
+
+## Resposta (Rastreio)
+
+A aplicação retornará status code `200` e uma string de confirmação, caso todos os objetos do array fornecido tiverem sido atualizados.
