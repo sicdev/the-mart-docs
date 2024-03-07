@@ -1,6 +1,6 @@
 # API de Vendas
 
-Aqui você encontrará uma visão geral da API de vendas e como integra-la à sua aplicação.
+Aqui você encontrará uma visão geral da API de vendas e como integrá-la à sua aplicação.
 
 ## Índice
 

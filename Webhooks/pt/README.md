@@ -1,6 +1,6 @@
 # Webhooks
 
-Aqui você encontrará uma visão geral dos webhooks e como integra-los à sua aplicação.
+Aqui você encontrará uma visão geral dos webhooks e como integrá-los à sua aplicação.
 
 ## Índice
 
