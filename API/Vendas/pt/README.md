@@ -223,13 +223,19 @@ curl -X 'PATCH' \
 
 ## Payload (Rastreio)
 
-| Propriedades      | Tipo     | Descrição                                    |
-| ----------------- | -------- | -------------------------------------------- |
-| `data`            | Object[] | Vendas a serem atualizadas e seus dados      |
-| `saleId`          | String   | Identificador único da venda (`tmor_...`)    |
-| `shippingService` | String   | Serviço de Logistica (correios, jadlog, etc) |
-| `shippingCode`    | String   | Código de Rastreio                           |
+| Propriedades      | Tipo     | Descrição                                             |
+| ----------------- | -------- | ----------------------------------------------------- |
+| `data`            | Object[] | Vendas a serem atualizadas e seus dados               |
+| `saleId`          | String   | Identificador único da venda (`tmor_...` ou `or_...`) |
+| `shippingService` | String   | Serviço de Logistica (correios, jadlog, etc)          |
+| `shippingCode`    | String   | Código de Rastreio                                    |
 
 ## Resposta (Rastreio)
 
-A aplicação retornará status code `200` e uma string de confirmação, caso todos os objetos do array fornecido tiverem sido atualizados.
+A resposta consiste em arrays de controle dos IDs fornecidos, listando os bem sucedidos, os que causaram falha, e os que não foram encontrados.
+
+| Propriedades        | Tipo     | Descrição                                          |
+| ------------------- | -------- | -------------------------------------------------- |
+| `successfulUpdates` | String[] | Identificadores das vendas atualizadas com sucesso |
+| `failedUpdates`     | String[] | Identificadores das vendas que causaram falha      |
+| `notFoundOrders`    | String[] | Identificadores das vendas não encontradas         |

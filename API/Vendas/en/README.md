@@ -230,4 +230,10 @@ curl -X 'PATCH' \
 
 ## Response (Tracking)
 
-The application will return status code `200` and a confirmation string if all objects in the provided array have been updated.
+The response consists of control arrays of the provided IDs, listing the successful ones, the ones that caused failure, and the ones that were not found.
+
+| Propriedades        | Tipo     | Descrição                     |
+| ------------------- | -------- | ----------------------------- |
+| `successfulUpdates` | String[] | Successfully updated sale IDs |
+| `failedUpdates`     | String[] | Failed to update sale IDs     |
+| `notFoundOrders`    | String[] | Not found sale IDs            |
