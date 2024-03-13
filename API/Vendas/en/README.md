@@ -70,8 +70,9 @@ curl --request GET \
             "updatedAt":"2024-01-12T13:38:29.272Z",
             "status":"success",
             "totalProducts":20,
-            "totalFrete":0,
-            "discount":0
+            "totalFrete": 0,
+            "discount": 0,
+            "productQty": 1
          },
          "customer":{
             "customerId":"cus_xxxxxxx",
@@ -93,7 +94,6 @@ curl --request GET \
                "ProductID":"themartcc1977-ddfe-4180-bcf9-843819970512",
                "productName":"Product Name",
                "productUnitaryValue":20,
-               "productQty":1
             }
          ]
       }
@@ -121,6 +121,7 @@ curl --request GET \
 | `status`        | String          | Sale Status               |
 | `totalFrete`    | Number          | Shipping value            |
 | `discount`      | Number          | Discount value            |
+| `productQty`    | Number          | Product quantity          |
 | `createdAt`     | ISO 8601 String | Sale creation date        |
 | `updatedAt`     | ISO 8601 String | Last sale update date     |
 
@@ -149,7 +150,6 @@ curl --request GET \
 | `ProductID`           | String | Product unique identifier |
 | `productName`         | String | Product name              |
 | `productUnitaryValue` | Number | Unitary value             |
-| `productQty`          | Number | Product quantity          |
 
 ## Get Products (`GET /integration/products`)
 

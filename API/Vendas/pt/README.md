@@ -73,7 +73,8 @@ curl --request GET \
             "status":"success",
             "totalProducts":20,
             "totalFrete":0,
-            "discount":0
+            "discount":0,
+            "productQty": 1
          },
          "customer":{
             "customerId":"cus_xxxxxxx",
@@ -94,8 +95,7 @@ curl --request GET \
             {
                "ProductID":"themartcc1977-ddfe-4180-bcf9-843819970512",
                "productName":"Nome do Produto",
-               "productUnitaryValue":20,
-               "productQty":1
+               "productUnitaryValue":20
             }
          ]
       }
@@ -123,6 +123,7 @@ curl --request GET \
 | `status`        | String          | Status da Venda                      |
 | `totalFrete`    | Number          | Valor do frete                       |
 | `discount`      | Number          | Valor de Desconto                    |
+| `productQty`    | Number          | Quantidade do Produto                |
 | `createdAt`     | ISO 8601 String | Data de criação da Venda             |
 | `updatedAt`     | ISO 8601 String | Última atualização da Venda          |
 
@@ -151,7 +152,6 @@ curl --request GET \
 | `ProductID`           | String | Identificador único do Produto |
 | `productName`         | String | Nome do Produto                |
 | `productUnitaryValue` | Number | Valor unitário                 |
-| `productQty`          | Number | Quantidade do Produto          |
 
 ## Busca de Produtos (`GET /integration/products`)
 
