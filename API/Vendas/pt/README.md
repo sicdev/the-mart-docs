@@ -74,7 +74,8 @@ curl --request GET \
             "totalProducts":20,
             "totalFrete":0,
             "discount":0,
-            "productQty": 1
+            "productQty": 1,
+            "paymentMethod": "credit_card"
          },
          "customer":{
             "customerId":"cus_xxxxxxx",
@@ -121,11 +122,14 @@ curl --request GET \
 | `TotalCheckout` | Number          | Valor total da Venda                 |
 | `totalProducts` | Number          | Valor agregado dos produtos da Venda |
 | `status`        | String          | Status da Venda                      |
+| `paymentMethod` | PaymentMethod   | Método de Pagamento da Venda         |
 | `totalFrete`    | Number          | Valor do frete                       |
 | `discount`      | Number          | Valor de Desconto                    |
 | `productQty`    | Number          | Quantidade do Produto                |
 | `createdAt`     | ISO 8601 String | Data de criação da Venda             |
 | `updatedAt`     | ISO 8601 String | Última atualização da Venda          |
+
+PaymentMethod = `'credit_card'` | `'boleto'` | `'pix'`
 
 #### Customer
 

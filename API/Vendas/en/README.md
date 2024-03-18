@@ -72,7 +72,8 @@ curl --request GET \
             "totalProducts":20,
             "totalFrete": 0,
             "discount": 0,
-            "productQty": 1
+            "productQty": 1,
+            "paymentMethod": "credit_card"
          },
          "customer":{
             "customerId":"cus_xxxxxxx",
@@ -119,11 +120,14 @@ curl --request GET \
 | `TotalCheckout` | Number          | Sale total value          |
 | `totalProducts` | Number          | Products aggregated value |
 | `status`        | String          | Sale Status               |
+| `paymentMethod` | PaymentMethod   | Sale Payment Method       |
 | `totalFrete`    | Number          | Shipping value            |
 | `discount`      | Number          | Discount value            |
 | `productQty`    | Number          | Product quantity          |
 | `createdAt`     | ISO 8601 String | Sale creation date        |
 | `updatedAt`     | ISO 8601 String | Last sale update date     |
+
+PaymentMethod = `'credit_card'` | `'boleto'` | `'pix'`
 
 #### Customer
 
