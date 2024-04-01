@@ -28,6 +28,7 @@ Aqui você encontrará uma visão geral dos webhooks e como integrá-los à sua 
 | `order-made`         | Pedido realizado     |
 | `order-paid`         | Pedido pago          |
 | `order-refunded`     | Pedido estornado     |
+| `shipping-updated`   | Envio atualizado     |
 
 ## Autenticação
 
@@ -40,8 +41,8 @@ O método de webhooks dispensa qualquer autenticação extra. Sendo gerada indiv
   "webhookUuid": "tmwh_Z2q62uvucp",
   "name": "Webhook Name",
   "url": "https://exemplo.com",
-  "type": "order-made",
-  "version": "1.1",
+  "type": "shipping-updated",
+  "version": "1.2",
   "data": {
     "product": {
       "uuid": "99f1a886-d2b8-4e48-ae63-11e0a5bd9887",
@@ -71,7 +72,11 @@ O método de webhooks dispensa qualquer autenticação extra. Sendo gerada indiv
         "pdfUrl": "https://pagar.me/pdf/...",
         "qrCodeUrl": "https://api.pagar.me/core/v5/transactions/.../qrcode"
       },
-      "status": "pending",
+      "status": "success",
+      "shipping": {
+        "shippingCode": "codigo.20.24",
+        "shippingService": "correios",
+      },
       "createdAt": "2024-02-23T20:49:14.777Z",
       "updatedAt": "2024-02-23T20:49:14.777Z"
     },
@@ -145,6 +150,7 @@ O método de webhooks dispensa qualquer autenticação extra. Sendo gerada indiv
 ### Order
 
 Nos eventos **'order-made'** e **'order-paid'** em pedidos realizados com Boleto ou Pix, a propriedade `payment` será preenchida com os dados necessários para realizar o pagamento do pedido, do contrário, ela será **nula**.
+A propriedade `shipping` será **nula** por padrão, porém ao ser atualizada será disparado o evento **'shipping-updated'**.
 
 | Propriedade     | Tipo                          | Descrição                                             |
 | --------------- | ----------------------------- | ----------------------------------------------------- |
@@ -154,7 +160,7 @@ Nos eventos **'order-made'** e **'order-paid'** em pedidos realizados com Boleto
 | `paymentMethod` | PaymentMethods                | Método de Pagamento                                   |
 | `payment`       | PixPayment? \| BoletoPayment? | Dados necessários para realizar o pagamento do Pedido |
 | `status`        | Status                        | Status do Pedido                                      |
-| `commission`    | Number                        | Comissão do Plano                                     |
+| `shipping`      | Shipping                      | Dados do Envio                                        |
 | `createdAt`     | ISO 8601 String               | Data de criação da Venda                              |
 | `updatedAt`     | ISO 8601 String               | Ultima atualização da Venda                           |
 
@@ -193,6 +199,13 @@ Nos eventos **'order-made'** e **'order-paid'** em pedidos realizados com Boleto
 | `line`       | String          | Linha digitável do código de barras                |
 | `pdfUrl`     | String          | Link do PDF do Boleto                              |
 | `qrcodeUrl`  | String          | Link da imagem do QR Code para pagamento do Boleto |
+
+### Shipping
+
+| Propriedade       | Tipo   | Descrição                      |
+| ----------------- | ------ | ------------------------------ |
+| `shippingCode`    | String | Código de rastreio             |
+| `shippingService` | String | Empresa responsável pelo envio |
 
 ### Customer
 

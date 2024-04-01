@@ -28,6 +28,7 @@ Here you will find an overview of webhooks and how to integrate them into your a
 | `order-made`         | Order made           |
 | `order-paid`         | Order paid           |
 | `order-refunded`     | Order refunded       |
+| `shipping-updated`   | Shipping Updated     |
 
 ## Authentication
 
@@ -40,8 +41,8 @@ The webhook method does not require any extra authentication. It is generated in
   "webhookUuid": "tmwh_Z2q62uvucp",
   "name": "Webhook Name",
   "url": "https://exemplo.com",
-  "type": "order-made",
-  "version": "1.1",
+  "type": "shipping-updated",
+  "version": "1.2",
   "data": {
     "product": {
       "uuid": "99f1a886-d2b8-4e48-ae63-11e0a5bd9887",
@@ -71,7 +72,11 @@ The webhook method does not require any extra authentication. It is generated in
         "pdfUrl": "https://pagar.me/pdf/...",
         "qrCodeUrl": "https://api.pagar.me/core/v5/transactions/.../qrcode"
       },
-      "status": "pending",
+      "status": "success",
+      "shipping": {
+        "shippingCode": "codigo.20.24",
+        "shippingService": "correios",
+      },
       "createdAt": "2024-02-23T20:49:14.777Z",
       "updatedAt": "2024-02-23T20:49:14.777Z"
     },
@@ -145,6 +150,7 @@ The webhook method does not require any extra authentication. It is generated in
 ### Order
 
 In the **'order-made'** and **'order-paid'** events for orders placed with _Boleto_ or _PIX_, the property payment will be filled with the necessary data to complete the order payment, otherwise it will be **null**.
+The `shipping` property will be **null** by default, however, when updated, the **'shipping-updated'** event will be triggered.
 
 | Properties      | Type                          | Description                       |
 | --------------- | ----------------------------- | --------------------------------- |
@@ -154,7 +160,7 @@ In the **'order-made'** and **'order-paid'** events for orders placed with _Bole
 | `paymentMethod` | PaymentMethods                | Payment method                    |
 | `payment`       | PixPayment? \| BoletoPayment? | Data used to complete the payment |
 | `status`        | Status                        | Order status                      |
-| `commission`    | Number                        | Plan commission                   |
+| `shipping`      | Shipping                      | Shipping data                     |
 | `createdAt`     | ISO 8601 String               | Order creation date               |
 | `updatedAt`     | ISO 8601 String               | Last sale update date             |
 
@@ -193,6 +199,13 @@ In the **'order-made'** and **'order-paid'** events for orders placed with _Bole
 | `line`       | String          | Barcode digits                                |
 | `pdfUrl`     | String          | _Boleto_ PDF URL                              |
 | `qrcodeUrl`  | String          | URL to the QR Code image for _Boleto_ payment |
+
+### Shipping
+
+| Properties        | Type   | Description                      |
+| ----------------- | ------ | -------------------------------- |
+| `shippingCode`    | String | Tracking code                    |
+| `shippingService` | String | Company responsible for shipping |
 
 ### Customer
 
