@@ -16,6 +16,7 @@ Aqui você encontrará uma visão geral dos webhooks e como integrá-los à sua 
   - [Status](#status)
   - [PixPayment](#pixpayment)
   - [BoletoPayment](#boletopayment)
+  - [Shipping](#shipping)
   - [Customer](#customer)
   - [Address](#address)
   - [Phone](#phone)
