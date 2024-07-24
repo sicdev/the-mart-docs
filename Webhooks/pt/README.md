@@ -175,12 +175,13 @@ A propriedade `shipping` será **nula** por padrão, porém ao ser atualizada se
 
 ### Status
 
-| Valor      | Descrição                       |
-| ---------- | ------------------------------- |
-| `error`    | Erro na Venda (ou no Pagamento) |
-| `pending`  | Pagamento Pendente              |
-| `success`  | Venda Concluída (Paga)          |
-| `refunded` | Venda Estornada                 |
+| Valor       | Descrição                       |
+| ----------- | ------------------------------- |
+| `error`     | Erro na Venda (ou no Pagamento) |
+| `pending`   | Pagamento Pendente              |
+| `success`   | Venda Concluída (Paga)          |
+| `refunded`  | Venda Estornada                 |
+| `free-paid` | Venda Concluída (plano Grátis)  |
 
 ### PixPayment
 

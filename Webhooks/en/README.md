@@ -175,12 +175,13 @@ The `shipping` property will be **null** by default, however, when updated, the 
 
 ### Status
 
-| Value      | Description                        |
-| ---------- | ---------------------------------- |
-| `error`    | Error during the Sale (or Payment) |
-| `pending`  | Payment pending                    |
-| `success`  | Sale made (Payment Successful)     |
-| `refunded` | Sale refunded                      |
+| Value       | Description                        |
+| ----------- | ---------------------------------- |
+| `error`     | Error during the Sale (or Payment) |
+| `pending`   | Payment pending                    |
+| `success`   | Sale made (Payment Successful)     |
+| `refunded`  | Sale refunded                      |
+| `free-paid` | Sale made (Free plan)              |
 
 ### PixPayment
 
