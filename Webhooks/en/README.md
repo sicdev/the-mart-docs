@@ -43,7 +43,7 @@ The webhook method does not require any extra authentication. It is generated in
   "name": "Webhook Name",
   "url": "https://exemplo.com",
   "type": "shipping-updated",
-  "version": "1.2",
+  "version": "1.3",
   "data": {
     "product": {
       "uuid": "99f1a886-d2b8-4e48-ae63-11e0a5bd9887",
