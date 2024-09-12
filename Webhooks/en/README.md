@@ -39,21 +39,21 @@ The webhook method does not require any extra authentication. It is generated in
 
 ```JSON
 {
-  "webhookUuid": "tmwh_Z2q62uvucp",
+  "webhookUuid": "tmwh_xxxxxxxxxx",
   "name": "Webhook Name",
   "url": "https://exemplo.com",
   "type": "shipping-updated",
-  "version": "1.3",
+  "version": "1.4",
   "data": {
     "product": {
-      "uuid": "99f1a886-d2b8-4e48-ae63-11e0a5bd9887",
+      "uuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
       "name": "Product Name",
       "description": "Product description",
       "createdAt": "2024-02-19T18:44:19.741Z",
       "updatedAt": "2024-02-23T20:11:24.347Z"
     },
     "plan": {
-      "uuid": "tmpl_GUR2aM7YJR",
+      "uuid": "tmpl_xxxxxxxxxx",
       "description": "Plan Name",
       "price": 154,
       "commission": 14,
@@ -61,7 +61,7 @@ The webhook method does not require any extra authentication. It is generated in
       "updatedAt": "2024-02-23T20:05:31.043Z"
     },
     "order": {
-      "uuid": "tmor_R-ZRKe1QTF",
+      "uuid": "tmor_xxxxxxxxxx",
       "planValue": 154,
       "installments": null,
       "paymentMethod": "boleto",
@@ -156,6 +156,7 @@ The `shipping` property will be **null** by default, however, when updated, the 
 | Properties      | Type                          | Description                       |
 | --------------- | ----------------------------- | --------------------------------- |
 | `uuid`          | String                        | Order unique identifier           |
+| `saleId`        | String                        | Sale unique identifier            |
 | `planValue`     | Number                        | Plan value                        |
 | `installments`  | Number?                       | Installments count                |
 | `paymentMethod` | PaymentMethods                | Payment method                    |

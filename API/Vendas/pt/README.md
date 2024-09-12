@@ -37,11 +37,11 @@ Para gerar o token é simples, você precisará somente de uma conta completa na
 
 ## Busca de Vendas (`GET /integration/sales`)
 
-Utilize esta rota para listar as vendas do usuário autenticado, aplicando filtros de status, data, paginação e ordernação.
+Utilize esta rota para listar as vendas do usuário autenticado, aplicando filtros de status, data, paginação e ordenação. Fornecer o intervalo de datas (`startDate` e `endDate`) é obrigatório.
 
 ```bash
 curl --request GET \
-  --url 'https://the-mart-api.herokuapp.com/integration/sales?orderBy=productName&sort=asc' \
+  --url 'https://the-mart-api.herokuapp.com/integration/sales?startDate=2024-01-01T00:00:00.000Z&endDate=2024-02-01T00:00:00.000Z&orderBy=productName&sort=asc' \
   --header 'Accept: application/json, text/plain, */*' \
   --header 'Authorization: Bearer {Bearer Token}' \
 ```
@@ -67,6 +67,7 @@ curl --request GET \
       {
          "sale":{
             "saleId":"or_xxxxxxxx",
+            "orderUuid":"tmor_xxxxxxxxxx",
             "TotalCheckout":20,
             "createdAt":"2024-01-12T13:38:19.314Z",
             "updatedAt":"2024-01-12T13:38:29.272Z",
@@ -119,6 +120,7 @@ curl --request GET \
 | Propriedades    | Tipo            | Descrição                            |
 | --------------- | --------------- | ------------------------------------ |
 | `saleId`        | String          | Identificador único da Venda         |
+| `orderUuid`     | String          | Identificador único do Pedido        |
 | `TotalCheckout` | Number          | Valor total da Venda                 |
 | `totalProducts` | Number          | Valor agregado dos produtos da Venda |
 | `status`        | String          | Status da Venda                      |

@@ -35,11 +35,11 @@ To use a route, it is necessary to generate a user access token.
 
 ## Get Sales (`GET /integration/sales`)
 
-Use this route to list the sales of the authenticated user, applying filters for status, date, pagination, and sorting.
+Use this route to list the sales of the authenticated user, applying filters for status, date, pagination, and sorting. Providing the date range (`startDate` and `endDate`) is required.
 
 ```bash
 curl --request GET \
-  --url 'https://the-mart-api.herokuapp.com/integration/sales?orderBy=productName&sort=asc' \
+  --url 'https://the-mart-api.herokuapp.com/integration/sales?startDate=2024-01-01T00:00:00.000Z&endDate=2024-02-01T00:00:00.000Z&orderBy=productName&sort=asc' \
   --header 'Accept: application/json, text/plain, */*' \
   --header 'Authorization: Bearer {Bearer Token}' \
 ```
@@ -65,6 +65,7 @@ curl --request GET \
       {
          "sale":{
             "saleId":"or_xxxxxxxx",
+            "orderUuid": "tmor_xxxxxxxxxx",
             "TotalCheckout":20,
             "createdAt":"2024-01-12T13:38:19.314Z",
             "updatedAt":"2024-01-12T13:38:29.272Z",
@@ -117,6 +118,7 @@ curl --request GET \
 | Properties      | Type            | Description               |
 | --------------- | --------------- | ------------------------- |
 | `saleId`        | String          | Unique Sale identifier    |
+| `orderUuid`     | String          | Unique Order identifier   |
 | `TotalCheckout` | Number          | Sale total value          |
 | `totalProducts` | Number          | Products aggregated value |
 | `status`        | String          | Sale Status               |

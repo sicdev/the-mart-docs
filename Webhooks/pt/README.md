@@ -39,21 +39,21 @@ O método de webhooks dispensa qualquer autenticação extra. Sendo gerada indiv
 
 ```JSON
 {
-  "webhookUuid": "tmwh_Z2q62uvucp",
+  "webhookUuid": "tmwh_xxxxxxxxxx",
   "name": "Webhook Name",
   "url": "https://exemplo.com",
   "type": "shipping-updated",
-  "version": "1.3",
+  "version": "1.4",
   "data": {
     "product": {
-      "uuid": "99f1a886-d2b8-4e48-ae63-11e0a5bd9887",
+      "uuid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
       "name": "Product Name",
       "description": "Product description",
       "createdAt": "2024-02-19T18:44:19.741Z",
       "updatedAt": "2024-02-23T20:11:24.347Z"
     },
     "plan": {
-      "uuid": "tmpl_GUR2aM7YJR",
+      "uuid": "tmpl_xxxxxxxxxx",
       "description": "Plan Name",
       "price": 154,
       "commission": 14,
@@ -61,7 +61,8 @@ O método de webhooks dispensa qualquer autenticação extra. Sendo gerada indiv
       "updatedAt": "2024-02-23T20:05:31.043Z"
     },
     "order": {
-      "uuid": "tmor_R-ZRKe1QTF",
+      "uuid": "tmor_xxxxxxxxxx",
+      "saleId": ""
       "planValue": 154,
       "installments": null,
       "paymentMethod": "boleto",
@@ -155,7 +156,8 @@ A propriedade `shipping` será **nula** por padrão, porém ao ser atualizada se
 
 | Propriedade     | Tipo                          | Descrição                                             |
 | --------------- | ----------------------------- | ----------------------------------------------------- |
-| `uuid`          | String                        | Identificador único da Venda                          |
+| `uuid`          | String                        | Identificador único do Pedido                         |
+| `saleId`        | String                        | Identificador único da Venda                          |
 | `planValue`     | Number                        | Valor do Plano                                        |
 | `installments`  | Number?                       | Número de Parcelas                                    |
 | `paymentMethod` | PaymentMethods                | Método de Pagamento                                   |
