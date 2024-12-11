@@ -103,24 +103,24 @@ O método de webhooks dispensa qualquer autenticação extra. Sendo gerada indiv
       }
     },
     "owner": {
-        name: "Amado Batista",
-        email: "amadobatista@email.com",
-        document: "5822561204"
+        "name": "Amado Batista",
+        "email": "amadobatista@email.com",
+        "document": "5822561204"
     },
     "split": [
       {
-        uuid: "99er9e4544rtrtr44321123",
-        name: "João da Silva",
-        email: "joaosilva@email.com",
-        value: 39.9,
-        role: "owner",
+        "uuid": "99er9e4544rtrtr44321123",
+        "name": "João da Silva",
+        "email": "joaosilva@email.com",
+        "value": 39.9,
+        "role": "owner",
       },
       {
-        uuid: "78bb9e99871bmgher6611369852",
-        name: "Carlos Pereira",
-        email: "carlospereira@email.com",
-        value: 2.5,
-        role: "manager",
+        "uuid": "78bb9e99871bmgher6611369852",
+        "name": "Carlos Pereira",
+        "email": "carlospereira@email.com",
+        "value": 2.5,
+        "role": "manager",
       },
     ],
   }
