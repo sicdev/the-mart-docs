@@ -268,19 +268,19 @@ Quando ativado pelo evento **'abandoned-checkout'** as propriedades de `Address`
 
 | Propriedade   | Tipo   | Descrição                               |
 | ------------- | ------ | --------------------------------------- |
-| `name`        | String | Nome do Cliente                         |
-| `email`       | String | Email do Cliente                        |
-| `document`    | String | Documento do Cliente                    |
+| `name`        | String | Nome do Produtor                        |
+| `email`       | String | Email do Produtor                       |
+| `document`    | String | Documento do Produtor                   |
 
 ### Split
 
-| Propriedade   | Tipo   | Descrição                               |
-| ------------- | ------ | --------------------------------------- |
-| `uuid`        | String | Código do País                          |
-| `name`        | String | Nome do Cliente                         |
-| `email`       | String | Email do Cliente                        |
-| `value`       | Number | Valor recebido na venda                 |
-| `role`        | Roles  | Perfil do usuário desempenhou na venda  |
+| Propriedade   | Tipo   | Descrição                                 |
+| ------------- | ------ | ----------------------------------------- |
+| `uuid`        | String | Código do usuário                         |
+| `name`        | String | Nome                                      |
+| `email`       | String | Email                                     |
+| `value`       | Number | Valor recebido na venda                   |
+| `role`        | Roles  | Perfil que o usuário desempenhou na venda |
 
 ### Roles
 
