@@ -20,6 +20,9 @@ Here you will find an overview of webhooks and how to integrate them into your a
   - [Customer](#customer)
   - [Address](#address)
   - [Phone](#phone)
+  - [Owner](#owner)
+  - [Split](#split)
+  - [Roles](#roles)
 
 ## Available Trigger Events
 
@@ -141,12 +144,14 @@ The webhook method does not require any extra authentication. It is generated in
 
 :warning: When triggered by the **'abandoned-checkout'** event, the property `order` will be **null** due to the unfinished checkout process.
 
-| Properties | Type     | Description             |
-| ---------- | -------- | ----------------------- |
-| `product`  | Product  | Content of the Product  |
-| `plan`     | Plan     | Content of the Plan     |
-| `order`    | Order    | Content of the Order    |
-| `customer` | Customer | Content of the Customer |
+| Properties | Type     | Description                 |
+| ---------- | -------- | --------------------------- |
+| `product`  | Product  | Content of the Product      |
+| `plan`     | Plan     | Content of the Plan         |
+| `order`    | Order    | Content of the Order        |
+| `customer` | Customer | Content of the Customer     |
+| `owner`    | Owner    | Product owner data          |
+| `split`    | Split    | Division of the sales value |
 
 ### Product
 
