@@ -100,7 +100,28 @@ The webhook method does not require any extra authentication. It is generated in
         "number": "999999999",
         "areaCode": "99"
       }
-    }
+    },
+    "owner": {
+        "name": "Amado Batista",
+        "email": "amadobatista@email.com",
+        "document": "5822561204"
+    },
+    "split": [
+      {
+        "uuid": "99er9e4544rtrtr44321123",
+        "name": "João da Silva",
+        "email": "joaosilva@email.com",
+        "value": 39.9,
+        "role": "owner",
+      },
+      {
+        "uuid": "78bb9e99871bmgher6611369852",
+        "name": "Carlos Pereira",
+        "email": "carlospereira@email.com",
+        "value": 2.5,
+        "role": "manager",
+      },
+    ],
   }
 }
 ```
@@ -241,3 +262,32 @@ When triggered by the **'abandoned-checkout'** event, the properties of `Address
 | `countryCode` | String | Country Code |
 | `number`      | String | Phone number |
 | `areaCode`    | String | Area Code    |
+
+
+### Owner
+
+| Propriedade   | Tipo   | Descrição                               |
+| ------------- | ------ | --------------------------------------- |
+| `name`        | String | Owner Name                              |
+| `email`       | String | Owner Email                             |
+| `document`    | String | Owner Document                          |
+
+### Split
+
+| Propriedade   | Tipo   | Descrição                               |
+| ------------- | ------ | --------------------------------------- |
+| `uuid`        | String | User code                               |
+| `name`        | String | User name                               |
+| `email`       | String | User Email                              |
+| `value`       | Number | Value received on a sale                |
+| `role`        | Roles  | User profile performed in the sale      |
+
+### Roles
+
+| Valor           | Descrição                       |
+| --------------- | ------------------------------- |
+| `affiliate`     | Affiliate                       |
+| `coowner`       | Co-owner                        |
+| `manager`       | Manager                         |
+| `owner`         | Owner                           |
+| `supplier`      | Supplier                        |
