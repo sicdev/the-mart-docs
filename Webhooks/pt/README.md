@@ -101,7 +101,28 @@ O método de webhooks dispensa qualquer autenticação extra. Sendo gerada indiv
         "number": "999999999",
         "areaCode": "99"
       }
-    }
+    },
+    "owner": {
+        name: "Amado Batista",
+        email: "amadobatista@email.com",
+        document: "5822561204"
+    },
+    "split": [
+      {
+        uuid: "99er9e4544rtrtr44321123",
+        name: "João da Silva",
+        email: "joaosilva@email.com",
+        value: 39.9,
+        role: "owner",
+      },
+      {
+        uuid: "78bb9e99871bmgher6611369852",
+        name: "Carlos Pereira",
+        email: "carlospereira@email.com",
+        value: 2.5,
+        role: "manager",
+      },
+    ],
   }
 }
 ```
@@ -242,3 +263,35 @@ Quando ativado pelo evento **'abandoned-checkout'** as propriedades de `Address`
 | `countryCode` | String | Código do País     |
 | `number`      | String | Número de telefone |
 | `areaCode`    | String | Código de área     |
+
+### Owner
+
+| Propriedade   | Tipo   | Descrição                               |
+| ------------- | ------ | --------------------------------------- |
+| `name`        | String | Nome do Cliente                         |
+| `email`       | String | Email do Cliente                        |
+| `document`    | String | Documento do Cliente                    |
+
+### Split
+
+| Propriedade   | Tipo   | Descrição                               |
+| ------------- | ------ | --------------------------------------- |
+| `uuid`        | String | Código do País                          |
+| `name`        | String | Nome do Cliente                         |
+| `email`       | String | Email do Cliente                        |
+| `value`       | Number | Valor recebido na venda                 |
+| `role`        | Roles  | Perfil do usuário desempenhou na venda  |
+
+### Roles
+
+| Valor           | Descrição                       |
+| --------------- | ------------------------------- |
+| `affiliate`     | Afiliado                        |
+| `coowner`       | Co-Produtor                     |
+| `manager`       | Gerente                         |
+| `owner`         | Produtor                        |
+| `supplier`      | Fornecedor                      |
+
+
+
+
