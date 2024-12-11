@@ -20,6 +20,9 @@ Aqui você encontrará uma visão geral dos webhooks e como integrá-los à sua 
   - [Customer](#customer)
   - [Address](#address)
   - [Phone](#phone)
+  - [Owner](#owner)
+  - [Split](#split)
+  - [Roles](#roles)
 
 ## Eventos disponíveis
 
@@ -142,12 +145,14 @@ O método de webhooks dispensa qualquer autenticação extra. Sendo gerada indiv
 
 :warning: Quando ativado pelo evento **'abandoned-checkout'** a propriedade `order` será nula, devido ao processo de compra inacabado.
 
-| Propriedade | Tipo     | Descrição           |
-| ----------- | -------- | ------------------- |
-| `product`   | Product  | Conteúdo do Produto |
-| `plan`      | Plan     | Conteúdo do Plano   |
-| `order`     | Order    | Conteúdo do Pedido  |
-| `customer`  | Customer | Dados do Cliente    |
+| Propriedade | Tipo     | Descrição                 |
+| ----------- | -------- | ------------------------- |
+| `product`   | Product  | Conteúdo do Produto       |
+| `plan`      | Plan     | Conteúdo do Plano         |
+| `order`     | Order    | Conteúdo do Pedido        |
+| `customer`  | Customer | Dados do Cliente          |
+| `owner`     | Owner    | Dados do produtor produto |    
+| `split`     | Split    | Divisão do valor da venda |
 
 ### Product
 
