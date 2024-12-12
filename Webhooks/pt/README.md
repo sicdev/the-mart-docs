@@ -22,7 +22,7 @@ Aqui você encontrará uma visão geral dos webhooks e como integrá-los à sua 
   - [Phone](#phone)
   - [Owner](#owner)
   - [Split](#split)
-  - [Roles](#roles)
+  - [Role](#role)
 
 ## Eventos disponíveis
 
@@ -285,9 +285,9 @@ Quando ativado pelo evento **'abandoned-checkout'** as propriedades de `Address`
 | `name`        | String | Nome                                      |
 | `email`       | String | Email                                     |
 | `value`       | Number | Valor recebido na venda                   |
-| `role`        | Roles  | Perfil que o usuário desempenhou na venda |
+| `role`        | Role   | Perfil que o usuário desempenhou na venda |
 
-### Roles
+### Role
 
 | Valor           | Descrição                       |
 | --------------- | ------------------------------- |
