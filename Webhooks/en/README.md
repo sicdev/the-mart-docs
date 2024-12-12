@@ -22,7 +22,7 @@ Here you will find an overview of webhooks and how to integrate them into your a
   - [Phone](#phone)
   - [Owner](#owner)
   - [Split](#split)
-  - [Roles](#roles)
+  - [Role](#role)
 
 ## Available Trigger Events
 
@@ -285,9 +285,9 @@ When triggered by the **'abandoned-checkout'** event, the properties of `Address
 | `name`        | String | User name                               |
 | `email`       | String | User Email                              |
 | `value`       | Number | Value received on a sale                |
-| `role`        | Roles  | User profile performed in the sale      |
+| `role`        | Role   | User profile performed in the sale      |
 
-### Roles
+### Role
 
 | Valor           | Descrição                       |
 | --------------- | ------------------------------- |
